@@ -6,6 +6,7 @@ app.use(helmet({
   frameguard: {
     action: 'deny'
   },
+<<<<<<< HEAD
   // contentSecurityPolicy: {
   //   directives: {
   //     defaultSrc: ["'self'"],
@@ -13,6 +14,17 @@ app.use(helmet({
 
 
 }));
+=======
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'trusted-cdn.com']
+    }
+  },
+  noCache: true
+}));
+
+>>>>>>> 3a6c84c2e1c982579ed55eb3213e69ebd46fd386
 app.use(helmet.hidePoweredBy());
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
@@ -23,7 +35,10 @@ app.use(helmet.hsts({maxAge: ninetyDaysInSeconds, force: true}));
 
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.noCache());
+<<<<<<< HEAD
 app.use(helmet.contentSecurityPolicy({directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", "trusted-cdn.com"] }}));
+=======
+>>>>>>> 3a6c84c2e1c982579ed55eb3213e69ebd46fd386
 
 
 
